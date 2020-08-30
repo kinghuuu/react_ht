@@ -1,0 +1,30 @@
+@import './assets/css/reset.less';
+
+:global {
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: "Microsoft YaHei", '微软雅黑', "Microsoft JhengHei", '华文细黑', 'STHeiti', 'MingLiu';
+  }
+
+  .global-spin {
+    width: 100%;
+    margin: 150px 0 !important;
+  }
+
+  .ant-tabs-tabpane-active {
+    height: 100%;
+  }
+
+  .ant-btn.button-success {
+    background-color: rgba(92, 184, 92, 1);
+    border-color: rgba(76, 174, 76, 1);
+
+    &:hover {
+      background-color: rgba(92, 184, 92, 0.85);
+      border-color: rgba(76, 174, 76, 0.85);
+    }
+  }
+}

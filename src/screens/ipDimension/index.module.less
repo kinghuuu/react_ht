@@ -1,0 +1,88 @@
+.block_body {
+    min-height: 100%;
+    padding: 8px;
+    background: #ffffff;
+    // color: #000;
+    // font-size: 14px;
+    // margin: 10px 0;
+}
+
+.searchInput {
+    padding-top: 4px;
+    min-height: 48px;
+    overflow: auto;
+
+    .searchName {
+        float: left;
+        line-height: 32px;
+        margin-right: 8px;
+    }
+
+    :global {
+        .ant-upload {
+            float: left;
+        }
+
+        .ant-input,
+        .ant-select,
+        .ant-btn {
+            float: left;
+            margin-right: 16px;
+        }
+
+    }
+
+}
+
+.customTree {
+
+    // .treeIcon {
+    //     display: inline-block;
+    //     width: 24px;
+    //     height: 24px;
+    //     overflow: hidden;
+
+    //     color: #fff;
+    //     line-height: 24px;
+    //     border-radius: 14px;
+    //     background-color: green;
+    // }
+
+    :global {
+        .ant-tree-iconEle.ant-tree-icon__customize {
+            margin-right: 8px;
+
+            span {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                overflow: hidden;
+
+                color: #fff;
+                line-height: 24px;
+                border-radius: 14px;
+
+
+                &.icon-bule {
+                    background-color: rgb(55, 58, 223);
+                }
+
+                &.icon-yellow {
+                    background-color: rgb(149, 165, 4);
+                }
+
+                &.icon-purple {
+                    background-color: rgb(179, 30, 179);
+                }
+
+                &.icon-orange {
+                    background-color: rgb(211, 144, 19);
+                }
+
+                &.icon-green {
+                    background-color: rgb(19, 192, 19);
+                }
+            }
+        }
+    }
+}

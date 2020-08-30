@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>检测访问环境</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #eceff1;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .container {
+            background: white;
+            height: auto;
+            width: 50%;
+            padding: 24px;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px auto 0 auto;
+        }
+        
+        h1 {
+            font-size: 22px;
+            margin: 0;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            color: #263238;
+        }
+        
+        span,
+        p {
+            margin: 0;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            color: #546e7a;
+        }
+        
+        a {
+            color: cornflowerblue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        #browser {
+            color: rgb(254, 138, 84);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onload="detectBrowser()">
+    <div class="container">
+        <h1>无法访问该页面</h1>
+        <span>您当前的浏览器是:&nbsp;&nbsp;<span id="browser"></span></span>
+        <p>请使用 Chrome 浏览器或者 IE11 浏览器进行访问</p>
+        <!-- <a onClick="openChrome()">点击此处跳转到Chrome打开</a> -->
+    </div>
+    <script>
+        function detectBrowser() {
+            var realIEVersion = "低于IE7";
+            var docMode = false;
+            // 判断真实的IE版本
+            if (!!window.MSInputMethodContext && !!document.documentMode) {
+                realIEVersion = "IE11";
+            } else {
+                /*@cc_on
+                        docMode = true;
+                        @if (@_jscript_version == 11)        
+                            realIEVersion = "IE11";        
+                        @elif (@_jscript_version == 10)            
+                            realIEVersion = "IE10";            
+                        @elif (@_jscript_version == 9)            
+                            realIEVersion = "IE9";                                        
+                        @elif (@_jscript_version == 5.8)            
+                            realIEVersion = "IE8";            
+                        @elif (@_jscript_version == 5.7 && window.XMLHttpRequest)            
+                            realIEVersion = "IE7";
+                        @elif (@_jscript_version == 5.6 || (@_jscript_version == 5.7 && !window.XMLHttpRequest))
+                            realIEVersion = "IE6";
+                        @end            
+                    @*/
+            }
+            if (docMode === true) {
+                if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
+                    document.getElementById("browser").innerText = realIEVersion + ", ( 文档模式IE7)";
+                }
+                if (navigator.appVersion.indexOf("MSIE 8.") != -1) {
+                    document.getElementById("browser").innerText = realIEVersion + ", ( 文档模式IE8 )";
+                }
+                if (navigator.appVersion.indexOf("MSIE 9.") != -1) {
+                    document.getElementById("browser").innerText = realIEVersion + ", ( 文档模式IE9 )";
+                }
+                if (navigator.appVersion.indexOf("MSIE 10.") != -1) {
+                    document.getElementById("browser").innerText = realIEVersion + ", ( 文档模式IE10 )";
+                }
+            } else {
+                if (!!window.MSInputMethodContext && !!document.documentMode) {
+                    document.getElementById("browser").innerText = "IE11";
+                }
+                if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
+                    document.getElementById("browser").innerText = "IE7";
+                }
+                if (navigator.appVersion.indexOf("MSIE 8.") != -1) {
+                    document.getElementById("browser").innerText = "IE8";
+                }
+                if (navigator.appVersion.indexOf("MSIE 9.") != -1) {
+                    document.getElementById("browser").innerText = "IE9";
+                }
+                if (navigator.appVersion.indexOf("MSIE 10.") != -1) {
+                    document.getElementById("browser").innerText = "IE10";
+                }
+                if (/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor)) {
+                    document.getElementById("browser").innerText = "Chrome";
+                }
+                if (/Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor)) {
+                    document.getElementById("browser").innerText = "Safari";
+                }
+                if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+                    document.getElementById("browser").innerText = "Firefox";
+                }
+                if (!!window.opera || navigator.userAgent.toLowerCase().indexOf("opr/") > -1) {
+                    document.getElementById("browser").innerText = "Opera";
+                }
+            }
+        }
+
+        function openChrome() {
+            var objShell = new ActiveXObject("WScript.Shell");
+            objShell.Run("cmd.exe /c start chrome http://eip.htsc.com.cn/portalweb/portal2/index.html");
+        }
+    </script>
+</body>
+
+</html>

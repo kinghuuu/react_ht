@@ -1,0 +1,32 @@
+.block_body {
+    min-height: 100%;
+    padding: 8px;
+    background: #ffffff;
+}
+
+
+.customModal {
+    :global {
+        .ant-modal-body {
+            padding: 0;
+        }
+
+        .ant-form {
+            padding: 0 24px;
+        }
+    }
+
+    .contractModalBody {
+        overflow: auto;
+
+        &::before,
+        &::after {
+            content: ' ';
+            height: 36px;
+            display: block;
+            overflow: hidden;
+        }
+
+    }
+
+}

@@ -1,0 +1,52 @@
+
+.queryCol {
+    background: rgb(231, 243, 249);
+    margin-top: 12px;
+    padding-top: 6px;
+}
+
+.menuitem{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    text-align: center;
+}
+
+:global{
+    .ant-table-fixed {
+        table-layout: fixed;
+      }
+    
+      .ant-table-tbody > tr > td {
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+    .ant-drawer-header {
+        background: #fafafa;
+        border-bottom: none;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .ant-drawer-wrapper-body{
+        overflow: hidden;
+       height: 100%;
+    }
+    .ant-drawer-body{
+        padding: 5px 20px 10px;
+        overflow: auto;
+        height: 90%;
+       }
+       .ant-drawer-close{
+        top: -8px;
+       }
+}
+
+.baseinfo_save{
+    float: right;
+    margin-right: 20px;
+    z-index: 1;
+    &:hover {
+        cursor: pointer;
+    }
+}

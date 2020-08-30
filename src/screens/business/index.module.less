@@ -1,0 +1,44 @@
+.block_body {
+    min-height: 700px;
+    padding: 8px;
+    background: #ffffff;
+    // color: #000;
+    // font-size: 14px;
+    // margin: 10px 0;
+}
+
+.module_item {
+    //width: 150px;
+    //height: 80px;
+    font-size: 14px;
+    //border: 1px solid #bde2f5;
+    //background-color: #fbfdfe;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 10px;
+    }
+}
+
+.module_text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.searchInput {
+    // padding-left: 72px;
+    height: 46px;
+    &>span {
+        float: left;
+        margin-left: -72px;
+        line-height: 32px;
+    }
+}
